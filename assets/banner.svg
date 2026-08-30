@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="100%" height="auto">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="45%" stop-color="#141a2e" />
+      <stop offset="100%" stop-color="#090d16" />
+    </linearGradient>
+    <linearGradient id="neonText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="35%" stop-color="#818cf8" />
+      <stop offset="70%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+    <radialGradient id="glowCircle1" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6366f1" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowCircle2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ec4899" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ec4899" stop-opacity="0" />
+    </radialGradient>
+    <radialGradient id="glowCircle3" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#06b6d4" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#06b6d4" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <style>
+      @keyframes float1 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-12px) rotate(4deg); }
+      }
+      @keyframes float2 {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(14px) rotate(-5deg); }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.5; transform: scale(1); }
+        50% { opacity: 0.9; transform: scale(1.1); }
+      }
+      @keyframes shimmer {
+        0% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 100; }
+      }
+      .floating-card1 { animation: float1 6s ease-in-out infinite; transform-origin: center; }
+      .floating-card2 { animation: float2 7s ease-in-out infinite; transform-origin: center; }
+      .pulse-bg1 { animation: pulseGlow 8s ease-in-out infinite; transform-origin: 300px 150px; }
+      .pulse-bg2 { animation: pulseGlow 7s ease-in-out infinite alternate; transform-origin: 980px 250px; }
+      .grid-line { stroke: rgba(255,255,255,0.035); stroke-width: 1; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="400" fill="url(#bgGrad)" />
+
+  <!-- Background Grid -->
+  <g>
+    <line x1="0" y1="80" x2="1280" y2="80" class="grid-line" />
+    <line x1="0" y1="160" x2="1280" y2="160" class="grid-line" />
+    <line x1="0" y1="240" x2="1280" y2="240" class="grid-line" />
+    <line x1="0" y1="320" x2="1280" y2="320" class="grid-line" />
+    <line x1="160" y1="0" x2="160" y2="400" class="grid-line" />
+    <line x1="320" y1="0" x2="320" y2="400" class="grid-line" />
+    <line x1="480" y1="0" x2="480" y2="400" class="grid-line" />
+    <line x1="640" y1="0" x2="640" y2="400" class="grid-line" />
+    <line x1="800" y1="0" x2="800" y2="400" class="grid-line" />
+    <line x1="960" y1="0" x2="960" y2="400" class="grid-line" />
+    <line x1="1120" y1="0" x2="1120" y2="400" class="grid-line" />
+  </g>
+
+  <!-- Glowing Orbs -->
+  <circle cx="280" cy="180" r="220" fill="url(#glowCircle1)" class="pulse-bg1" />
+  <circle cx="1020" cy="220" r="250" fill="url(#glowCircle2)" class="pulse-bg2" />
+  <circle cx="640" cy="200" r="180" fill="url(#glowCircle3)" class="pulse-bg1" />
+
+  <!-- Outer Border Glow -->
+  <rect x="2" y="2" width="1276" height="396" rx="16" fill="none" stroke="url(#neonText)" stroke-width="1.5" stroke-opacity="0.3" />
+
+  <!-- Floating Left Card: Memberships & Tips -->
+  <g class="floating-card1">
+    <rect x="80" y="90" width="220" height="210" rx="18" fill="#1e293b" fill-opacity="0.65" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.5" filter="url(#glow)" />
+    <circle cx="125" cy="135" r="20" fill="url(#emeraldGrad)" />
+    <text x="125" y="142" font-family="system-ui, -apple-system, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff" font-weight="bold">✦</text>
+    <text x="160" y="132" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Memberships</text>
+    <text x="160" y="148" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">Recurring Support</text>
+    
+    <path d="M 100 230 Q 130 190 160 210 T 220 180 T 280 195" fill="none" stroke="#34d399" stroke-width="3" stroke-linecap="round" />
+    <circle cx="280" cy="195" r="5" fill="#34d399" />
+    <rect x="100" y="250" width="180" height="28" rx="8" fill="#0f172a" fill-opacity="0.8" />
+    <text x="190" y="269" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#38bdf8" text-anchor="middle">⚡ Tips • Subscriptions</text>
+  </g>
+
+  <!-- Floating Right Card: Commerce & Digital Store -->
+  <g class="floating-card2">
+    <rect x="980" y="100" width="220" height="210" rx="18" fill="#1e293b" fill-opacity="0.65" stroke="#f472b6" stroke-width="1.5" stroke-opacity="0.5" filter="url(#glow)" />
+    <circle cx="1025" cy="145" r="20" fill="url(#goldGrad)" />
+    <text x="1025" y="152" font-family="system-ui, -apple-system, sans-serif" font-size="18" text-anchor="middle" fill="#ffffff" font-weight="bold">$</text>
+    <text x="1060" y="142" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="700" fill="#f8fafc">Commerce</text>
+    <text x="1060" y="158" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">Digital Downloads</text>
+    
+    <path d="M 1000 240 Q 1040 210 1080 230 T 1140 190 T 1180 205" fill="none" stroke="#f472b6" stroke-width="3" stroke-linecap="round" />
+    <circle cx="1180" cy="205" r="5" fill="#f472b6" />
+    <rect x="1000" y="260" width="180" height="28" rx="8" fill="#0f172a" fill-opacity="0.8" />
+    <text x="1090" y="279" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="600" fill="#fbbf24" text-anchor="middle">🛍️ Storefronts • Courses</text>
+  </g>
+
+  <!-- Center Content -->
+  <g text-anchor="middle">
+    <!-- Category Badge -->
+    <rect x="490" y="55" width="300" height="34" rx="17" fill="#1e1b4b" stroke="#818cf8" stroke-width="1.2" />
+    <text x="640" y="77" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#a5b4fc" letter-spacing="1.5">🚀 CURATED CREATOR ECOSYSTEM</text>
+
+    <!-- Main Title -->
+    <text x="640" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="44" font-weight="900" fill="url(#neonText)" letter-spacing="-0.5" filter="url(#glow)">
+      Awesome Creator Monetization
+    </text>
+
+    <!-- Subtitle -->
+    <text x="640" y="205" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="500" fill="#e2e8f0" letter-spacing="0.2">
+      Top SaaS Platforms &amp; Open-Source Creator Infrastructure
+    </text>
+
+    <!-- Key Focus Tags / Pills -->
+    <g transform="translate(360, 245)">
+      <rect x="0" y="0" width="115" height="32" rx="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1" />
+      <text x="57" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#38bdf8">💎 Memberships</text>
+
+      <rect x="125" y="0" width="85" height="32" rx="16" fill="#0f172a" stroke="#34d399" stroke-width="1" />
+      <text x="167" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#34d399">☕ Tips</text>
+
+      <rect x="220" y="0" width="145" height="32" rx="16" fill="#0f172a" stroke="#fbbf24" stroke-width="1" />
+      <text x="292" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#fbbf24">📦 Digital Products</text>
+
+      <rect x="375" y="0" width="185" height="32" rx="16" fill="#0f172a" stroke="#c084fc" stroke-width="1" />
+      <text x="467" y="21" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#c084fc">🌐 Open-Source Stacks</text>
+    </g>
+
+    <!-- Stats / Meta Bar -->
+    <text x="640" y="335" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="500" fill="#64748b">
+      Updated August 2026 • 100% Free &amp; Open-Source Friendly • Production-Ready Platforms
+    </text>
+  </g>
+</svg>
